@@ -23,9 +23,9 @@ public class Test {
         pDAO.delete(p);*/
         
         Pais p=new Pais();
-        p.setId(2);
+        p.setId(1);
         PaisDAO pDAO=new PaisDAO();
-         List<Pais> pais=pDAO.findById(p);
+        List<Pais> pais=pDAO.findById(p);
         for(int i=0;i<pais.size();i++){
             System.out.println("NOMBRE:"+pais.get(i).getNombre());
         }

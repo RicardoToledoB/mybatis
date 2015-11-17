@@ -24,7 +24,7 @@ public class PaisDAO implements PaisMapper {
         SqlSession session = new MyBatisUtil().getSession();
 
         try {
-            list = session.selectList("Pais.findById");
+            list = session.selectList("Pais.findById",p);
         } finally {
             session.close();
         }

@@ -45,7 +45,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
      <select id="findById" resultType="Pais" parameterType="Pais">
         
-        select id,nombre,estado from Pais where id=#{id}
+        select id,nombre,estado from Pais p where p.id=#{ id }
         
     </select>
    
