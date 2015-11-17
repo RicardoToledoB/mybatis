@@ -2,8 +2,11 @@ package com.mitsu.pruebas;
 import com.mitsu.mybatis.dao.PaisDAO;
 import com.mitsu.mybatis.model.Pais;
 import java.util.List;
+import org.apache.log4j.Logger;
 public class Test {
     public static void main(String[] args){
+          
+
            /*Pais p=new Pais();
            p.setNombre("CHILE");
            p.setEstado("ACTIVO");
@@ -28,6 +31,7 @@ public class Test {
         List<Pais> pais=pDAO.findById(p);
         for(int i=0;i<pais.size();i++){
             System.out.println("NOMBRE:"+pais.get(i).getNombre());
+          
         }
            
     }
