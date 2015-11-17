@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Pais">
+    <update id="update"
+            parameterType="com.mitsu.mybatis.model.Pais"
+            flushCache="true"
+            statementType="PREPARED"
+            timeout="20">
+        
+        update Pais set nombre=#{nombre},estado=#{estado} where id=#{id}
+        
+    </update>
+    <update id="delete"
+            parameterType="com.mitsu.mybatis.model.Pais"
+            flushCache="true"
+            statementType="PREPARED"
+            timeout="20">
+        
+        update Pais set estado="PASIVO" where id=#{id}
+       
+        
+    </update>
+    <insert
+        id="save"
+        parameterType="com.mitsu.mybatis.model.Pais"
+        flushCache="true"
+        statementType="PREPARED"
+        keyProperty="id"
+        keyColumn=""
+        useGeneratedKeys="true"
+        timeout="20">
+        
+        insert into Pais(nombre,estado) values(#{nombre},#{estado})     
+  
+    </insert>
+    
+    <select id="getAll" resultType="com.mitsu.mybatis.model.Pais" >
+        
+        select * from Pais where estado="ACTIVO"
+        
+    </select>
+    
+     <select id="findById" resultType="Pais" parameterType="Pais">
+        
+        select id,nombre,estado from Pais where id=#{id}
+        
+    </select>
+   
+
+</mapper>
